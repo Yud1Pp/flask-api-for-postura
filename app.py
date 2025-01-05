@@ -20,8 +20,8 @@ mp_holistic = mp.solutions.holistic
 mp_drawing = mp.solutions.drawing_utils
 
 # Load classification models
-model_spine = joblib.load("/model/spine (1).pkl")
-model_sit = joblib.load("/model/sit (1).pkl")
+model_spine = joblib.load("model/spine (1).pkl")
+model_sit = joblib.load("model/sit (1).pkl")
 
 # Firebase setup
 if not firebase_admin._apps:
@@ -36,9 +36,9 @@ kolom = []
 for val in range(0, num_coords):
     kolom += ['x{}'.format(val), 'y{}'.format(val), 'z{}'.format(val), 'v{}'.format(val)]
 
-
-# url = 'http://192.168.111.108:4747/'
-url = 1
+# url = "rtsp://192.168.1.13:8080/h264_opus.sdp"
+url = 'http://192.168.1.13:4747/video'
+# url = 1
 # Video capture setup
 cap = cv2.VideoCapture(url)
 
